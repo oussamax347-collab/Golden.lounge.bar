@@ -1,1 +1,98 @@
-<h1>Golden Lounge Bar</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Lounge Bar</title>
+  <style>
+    body{margin:0;background:#050505;color:white;font-family:Arial;text-align:center}
+    header{padding:25px;background:#000;position:sticky;top:0;z-index:10}
+    h1{color:#d4af37;font-size:42px}
+    h2{color:#d4af37}
+    .hero{padding:90px 20px;background:linear-gradient(#0008,#000),url("IMG_6478.jpeg") center/cover;min-height:80vh}
+    .btn{display:inline-block;background:#d4af37;color:#111;padding:15px 25px;border-radius:30px;margin:10px;text-decoration:none;font-weight:bold}
+    section{padding:50px 20px}
+    .card{background:#111827;border:1px solid #d4af37;border-radius:18px;padding:20px;margin:15px}
+    input,select,textarea{width:90%;padding:14px;margin:8px;border-radius:10px;background:#111;color:white;border:1px solid #d4af37}
+    button{background:#d4af37;color:#111;padding:15px 25px;border:0;border-radius:30px;font-weight:bold}
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>GOLDEN LOUNGE BAR</h1>
+  <p>Luxury Lounge • Cocktails • Shisha • Torino</p>
+</header>
+
+<div class="hero">
+  <h1>Golden Lounge Bar</h1>
+  <p>Via San Domenico 23 bis, Torino</p>
+  <p>Open 18:00 - 02:00</p>
+  <a class="btn" href="#menu">View Menu</a>
+  <a class="btn" href="#reservation">Reserve</a>
+</div>
+
+<section>
+  <h2>Welcome</h2>
+  <p>Benvenuti al Golden Lounge Bar, un ambiente esclusivo con cocktails, shisha premium e atmosfera VIP.</p>
+  <p>Welcome to Golden Lounge Bar, a premium destination for cocktails, shisha and luxury evenings.</p>
+  <p>Bienvenue au Golden Lounge Bar, une ambiance élégante au cœur de Turin.</p>
+  <p>مرحبا بكم في Golden Lounge Bar، أجواء راقية، شيشة فاخرة ومشروبات مميزة.</p>
+</section>
+
+<section id="menu">
+  <h2>Menu</h2>
+
+  <div class="card"><h3>Premium Shisha</h3><p>€20</p></div>
+  <div class="card"><h3>Signature Cocktails</h3><p>Golden Spritz €10 • Spicy Mule €12 • Hazelnut Smash €12</p></div>
+  <div class="card"><h3>International Cocktails</h3><p>Bloody Mary €8 • Manhattan €10 • Gin Fizz €8 • Paloma €8</p></div>
+  <div class="card"><h3>Vodka / Whiskey / Gin / Rum</h3><p>Premium spirits selection</p></div>
+  <div class="card"><h3>Champagne & Wines</h3><p>Moet & Chandon from €90 • Wines glass €5</p></div>
+  <div class="card"><h3>Soft Drinks</h3><p>Coca Cola €5 • Red Bull €5 • Water €2</p></div>
+  <div class="card"><h3>Coffee & Tea</h3><p>Caffè €2 • Caffè corretto €3 • Tea with mint €5</p></div>
+</section>
+
+<section id="reservation">
+  <h2>Reservation</h2>
+  <form onsubmit="sendWhatsApp(event)">
+    <input id="name" placeholder="Full Name" required>
+    <input id="phone" placeholder="Phone" required>
+    <input id="date" type="date" required>
+    <input id="time" type="time" required>
+    <input id="guests" type="number" placeholder="Guests" required>
+    <select id="shisha">
+      <option>Shisha Yes</option>
+      <option>Shisha No</option>
+    </select>
+    <textarea id="message" placeholder="Message"></textarea>
+    <button type="submit">Send Reservation on WhatsApp</button>
+  </form>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>📍 Via San Domenico 23 bis, Torino</p>
+  <p>📱 +39 320 563 1110</p>
+  <p>📸 Instagram: @goldenloungebar</p>
+  <p>🕕 18:00 - 02:00</p>
+  <a class="btn" href="https://wa.me/393205631110">WhatsApp</a>
+</section>
+
+<script>
+function sendWhatsApp(e){
+  e.preventDefault();
+  let text =
+  "New Reservation - Golden Lounge Bar%0A" +
+  "Name: " + document.getElementById("name").value + "%0A" +
+  "Phone: " + document.getElementById("phone").value + "%0A" +
+  "Date: " + document.getElementById("date").value + "%0A" +
+  "Time: " + document.getElementById("time").value + "%0A" +
+  "Guests: " + document.getElementById("guests").value + "%0A" +
+  "Shisha: " + document.getElementById("shisha").value + "%0A" +
+  "Message: " + document.getElementById("message").value;
+  window.open("https://wa.me/393205631110?text=" + text, "_blank");
+}
+</script>
+
+</body>
+</html>
